@@ -1,0 +1,30 @@
+name: Blog CI
+
+on:
+  push:
+    branches: master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout  
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v1.4.4
+        with:
+          node-version: '12.x'
+          
+      - name: Deploy Blog
+        env:
+          DEPLOY_BLOG: ${{secrets.DEPLOY_BLOG}}
+          TZ: Asia/Shanghai
+        run: |
+          git config --global user.name "XuemingNotCute"
+          git config --global user.email "Deploy@gmail.com"
+          npm install 
+          npm run build 
+          npm run deploy
