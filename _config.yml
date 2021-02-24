@@ -102,4 +102,11 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo:
+    github:
+      url: https://github.com/XuemingNotCute/XuemingNotCute.github.io
+      branch: master
+      token: $DEPLOY_BLOG 
+
+
