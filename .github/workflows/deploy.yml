@@ -24,7 +24,7 @@ jobs:
           TZ: Asia/Shanghai
         run: |
           git config --global user.name "XuemingNotCute"
-          git config --global user.email "Deploy@gmail.com"
+          git config --global user.email "1047122016@qq.com"
           npm install 
           npm run build 
           npm run deploy
